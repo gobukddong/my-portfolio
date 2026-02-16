@@ -5,8 +5,6 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Activities from "@/components/Activities";
-
-
 import RoadmapTimeline from "@/components/RoadmapTimeline";
 
 export default function Home() {
