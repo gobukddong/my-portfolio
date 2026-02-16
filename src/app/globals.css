@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-slate-950: #000000; /* Pure Black- */
+  --color-blue-400: #ffffff; /* White for accents */
+  --color-blue-500: #a1a1aa; /* Zinc-400 for secondary */
+  --color-blue-900: #27272a; /* Zinc-800 for backgrounds */
+  --color-purple-400: #ffffff;
+  --color-purple-500: #a1a1aa;
+  --color-green-400: #ffffff;
+  --color-green-500: #a1a1aa;
+  --color-red-400: #ffffff;
+  
+  --font-mono: var(--font-jetbrains-mono), monospace;
+}
+
+:root {
+  --foreground: #f8fafc;
+  --background: #0a0a1f; 
+}
+
+/* Base styles */
+html,
+body {
+  background-color: var(--color-slate-950);
+  color: #f1f5f9; /* slate-100 */
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-y: scroll; /* Allow scrolling */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Chrome, Safari, Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Utility classes */
+@utility glass-card {
+  @apply bg-blue-900/20 backdrop-blur-md border border-white/10;
+}
+
+@utility glitch-text {
+  position: relative;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-slate-950);
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -1px 0 #ff003c;
+  clip-path: inset(44% 0 61% 0);
+  animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -1px 0 #00f0ff;
+  clip-path: inset(55% 0 10% 0);
+  animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+  0% { clip-path: inset(20% 0 80% 0); }
+  20% { clip-path: inset(60% 0 10% 0); }
+  100% { clip-path: inset(10% 0 50% 0); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip-path: inset(10% 0 60% 0); }
+  20% { clip-path: inset(80% 0 5% 0); }
+  100% { clip-path: inset(40% 0 20% 0); }
+}
