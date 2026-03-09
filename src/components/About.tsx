@@ -50,7 +50,7 @@ export default function About() {
                                 <ul className="text-sm text-slate-300 space-y-0.5">
                                     <li>정보처리기능사</li>
                                     <li>MOS Excel 2016 Expert</li>
-                                    
+                                    <li>SQLD</li>
                                 </ul>
                             </div>
                         </div>

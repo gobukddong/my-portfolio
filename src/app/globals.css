@@ -12,6 +12,7 @@
   --color-red-400: #ffffff;
   
   --font-mono: var(--font-jetbrains-mono), monospace;
+  --font-serif: var(--font-noto-serif-kr), serif;
 }
 
 :root {
